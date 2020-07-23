@@ -1,0 +1,23 @@
+.app {
+  display: flex;
+  background: #343A40;
+
+  .search {
+    display: flex;
+    padding: 10px;
+    margin: 30px;
+    width: 600px;
+  }
+  .main {
+    display: flex;
+    flex-basis: 35%;
+    flex-direction: column;
+    background-color: #343A40;
+    border: 5px groove darkgray;
+    margin: 1px;
+
+  }
+  .countries {
+    margin: 5px;
+  }
+}
