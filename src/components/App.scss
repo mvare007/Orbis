@@ -1,23 +1,36 @@
 .app {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 12px;
   background: #343A40;
+}
 
-  .search {
-    display: flex;
-    padding: 10px;
-    margin: 30px;
-    width: 600px;
-  }
-  .main {
-    display: flex;
-    flex-basis: 35%;
-    flex-direction: column;
-    background-color: #343A40;
-    border: 5px groove darkgray;
-    margin: 1px;
-
-  }
-  .countries {
-    margin: 5px;
+.flags {
+  grid-area: 1 / 1 / 6 / 2;
+  background-color: #343A40;
+  border: 5px groove darkgray;
+  min-width: 28vw;
+  align-content: center;
+  justify-items: center;
+  .search  {
+    margin: 30px 10px 30px 10px;
+    font-size: 30px;
   }
 }
+.country-panel {
+  grid-area: 1 / 2 / 6 / 5;
+}
+
+.weather {
+  grid-area: 4 / 5 / 6 / 6;
+  border: 1px solid white;
+}
+
+.map {
+  grid-area: 1 / 5 / 4 / 6;
+  border: 1px solid white;
+}
+
+

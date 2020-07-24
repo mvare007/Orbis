@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
 import './App.scss';
-import CountriesList from './CountriesList/CountriesList'
-import Country from './Country/Country'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import CountriesList from './CountriesList/CountriesList';
+import Country from './Country/Country';
 
 const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
 
@@ -45,21 +47,30 @@ class App extends Component {
     const filteredCountries = countries.filter(country => country.name.match(new RegExp(search, 'i')))
     return (
       <div className="app">
-        <div className="main">
+
+        <div className="flags">
           <input
-            className="search"
-            placeholder="Search"
+            className="form-control-sm search"
+            placeholder="Search countries..."
             onChange={this.handleSearch} />
-          <div className="countries">
-            <CountriesList
-              countries={filteredCountries}
-              selectedCountry={selectedCountry}
-              onSelect={this.handleSelect}/>
-          </div>
+          <CountriesList
+            countries={filteredCountries}
+            selectedCountry={selectedCountry}
+            onSelect={this.handleSelect}/>
         </div>
-        <div>
+
+        <div className="country-panel">
         { loaded ? <Country country={selectedCountry} /> : "Select a Country" }
         </div>
+
+        <div className="map">
+          Map
+        </div>
+
+        <div className="weather">
+          Weather
+        </div>
+
       </div>
     );
   }
