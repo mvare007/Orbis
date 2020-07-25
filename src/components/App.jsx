@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
+import ReactMapboxGl from 'react-mapbox-gl';
 
 import './App.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import loader from '../images/loader.gif';
+
 import CountriesList from './CountriesList/CountriesList';
 import Country from './Country/Country';
 
 const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
+
+const Map = ReactMapboxGl({
+  accessToken: 'pk.eyJ1IjoibXZhcmUwMDciLCJhIjoiY2s2Y2FocWI3MDBobTNrbXdhZ3pmZnRiOCJ9.F0JHDGeqdYEJrB-XCJHr9Q'
+})
 
 class App extends Component {
   state = {
     countries: [],
     selectedCountry: {},
     loaded: false,
-    search: ''
+    search: '',
+    center: [-7.8536599, 39.557191],
+    zoom: [1]
   }
 
   componentDidMount() {
@@ -28,7 +35,8 @@ class App extends Component {
     const { value } = event.target;
 
     this.setState({
-      search: value
+      search: value,
+      loaded: false
     });
   }
 
@@ -38,19 +46,24 @@ class App extends Component {
 
     this.setState({
       selectedCountry: selectedCountry,
-      loaded: true
+      center: [selectedCountry.latlng[1], selectedCountry.latlng[0]],
+      loaded: true,
+      zoom: [4],
+      search: ''
     });
   }
 
   render() {
-    const { countries, search, selectedCountry, loaded } = this.state
+
+    const { countries, search, selectedCountry, loaded, center } = this.state
     const filteredCountries = countries.filter(country => country.name.match(new RegExp(search, 'i')))
+
     return (
       <div className="app">
 
         <div className="flags">
           <input
-            className="form-control-sm search"
+            className="search"
             placeholder="Search countries..."
             onChange={this.handleSearch} />
           <CountriesList
@@ -60,11 +73,16 @@ class App extends Component {
         </div>
 
         <div className="country-panel">
-        { loaded ? <Country country={selectedCountry} /> : "Select a Country" }
+        { loaded ? <Country country={selectedCountry} /> : <img src={loader} id="loader"/> }
         </div>
 
-        <div className="map">
-          Map
+        <div className="mapbox">
+          <Map
+            center={center}
+            zoom={[4]}
+            containerStyle={{ height: '100%', width: '100%' }}
+            style="mapbox://styles/davidchopin/cjtz90km70tkk1fo6oxifkd67">
+          </Map>
         </div>
 
         <div className="weather">
