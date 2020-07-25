@@ -1,55 +1,35 @@
   .country {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: top;
+    text-align: center;
 
     img {
-      width: 300px;
-      height: 190px;
-      margin: 30px;
+      height: 60%;
+      width: 40%;
+      margin: auto;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
 
-    h3 {
+    h4 {
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      justify-self: end;
     }
   }
 
-  @-webkit-keyframes slide-in-elliptic-left-fwd {
-    0% {
-      -webkit-transform: translateX(-800px) rotateY(30deg) scale(0);
-              transform: translateX(-800px) rotateY(30deg) scale(0);
-      -webkit-transform-origin: -100% 50%;
-              transform-origin: -100% 50%;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateX(0) rotateY(0) scale(1);
-              transform: translateX(0) rotateY(0) scale(1);
-      -webkit-transform-origin: 1800px 50%;
-              transform-origin: 1800px 50%;
-      opacity: 1;
-    }
-  }
-  @keyframes slide-in-elliptic-left-fwd {
-    0% {
-      -webkit-transform: translateX(-800px) rotateY(30deg) scale(0);
-              transform: translateX(-800px) rotateY(30deg) scale(0);
-      -webkit-transform-origin: -100% 50%;
-              transform-origin: -100% 50%;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateX(0) rotateY(0) scale(1);
-              transform: translateX(0) rotateY(0) scale(1);
-      -webkit-transform-origin: 1800px 50%;
-              transform-origin: 1800px 50%;
-      opacity: 1;
+  .table-dark {
+    font-size: 0.6em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+    border: 1px solid black;
+    max-width: 500px !important;
+
+    th {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
   }
 
-  .slide-in-elliptic-left-fwd {
-    -webkit-animation: slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  }
+

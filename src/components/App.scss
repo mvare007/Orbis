@@ -1,23 +1,43 @@
 .app {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   background: #343A40;
+}
 
-  .search {
-    display: flex;
-    padding: 10px;
-    margin: 30px;
-    width: 600px;
+.flags {
+  grid-area: 1 / 1 / 7 / 3;
+  background-color: #343A40;
+  min-width: 30vw;
+  align-content: center;
+  justify-items: center;
+  .search  {
+    margin: 30px 10px 30px 10px;
+    max-width: 65%;
+    min-width: 30%;
+    font-size: 0.8em;
+    margin: 20px 10px 20px 10px;
   }
-  .main {
-    display: flex;
-    flex-basis: 35%;
-    flex-direction: column;
-    background-color: #343A40;
-    border: 5px groove darkgray;
-    margin: 1px;
+}
+.country-panel {
+  grid-area: 1 / 3 / 7 / 5;
+}
 
-  }
-  .countries {
-    margin: 5px;
-  }
+.mapbox {
+  grid-area: 1 / 5 / 4 / 7;
+}
+
+.weather {
+  grid-area: 4 / 5 / 7 / 7;
+}
+
+
+
+#loader {
+  mix-blend-mode: multiply;
+  width: 8%;
+  margin: 300px auto;
+  display: block;
 }
