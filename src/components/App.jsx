@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactMapboxGl from 'react-mapbox-gl';
+import ReactMapboxGl, { Layer, Source } from 'react-mapbox-gl';
 
 import './App.scss';
 import loader from '../images/loader.gif';
@@ -12,6 +12,11 @@ const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
 const Map = ReactMapboxGl({
   accessToken: 'pk.eyJ1IjoibXZhcmUwMDciLCJhIjoiY2s2Y2FocWI3MDBobTNrbXdhZ3pmZnRiOCJ9.F0JHDGeqdYEJrB-XCJHr9Q'
 })
+
+const RASTER_SOURCE_OPTIONS = {
+  "type": "vector",
+  "url": "mapbox://mvare007.583q5hvi"
+};
 
 class App extends Component {
   state = {
@@ -79,9 +84,20 @@ class App extends Component {
         <div className="mapbox">
           <Map
             center={center}
-            zoom={[4]}
+            zoom={[5]}
             containerStyle={{ height: '100%', width: '100%' }}
             style="mapbox://styles/davidchopin/cjtz90km70tkk1fo6oxifkd67">
+            <Source id="countries" tileJsonSource={RASTER_SOURCE_OPTIONS} />
+             <Layer
+               id='countries'
+               sourceLayer='ne_10m_admin_0_countries-5zwxab'
+               filter={'countries', ['in', 'ADM0_A3_IS'].concat([selectedCountry.alpha3Code || ""])}
+               type='fill'
+               paint={{
+                 'fill-color': '#EEEB41',
+                 'fill-outline-color': 'red',
+                 'fill-opacity': 0.5
+               }}  />
           </Map>
         </div>
 

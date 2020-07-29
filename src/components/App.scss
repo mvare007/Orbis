@@ -33,11 +33,13 @@
   grid-area: 4 / 5 / 7 / 7;
 }
 
-
-
 #loader {
   mix-blend-mode: multiply;
   width: 8%;
   margin: 300px auto;
   display: block;
+}
+
+.mapboxgl-ctrl-logo {
+  opacity: 0;
 }
