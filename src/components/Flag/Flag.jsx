@@ -6,7 +6,6 @@ const Flag = ({flag, name, id, onSelect, selected}) => {
 
   const handleClick = () => {
     onSelect(name);
-     window.scrollTo({top: 0, behavior: 'smooth',})
    }
 
   const style = {

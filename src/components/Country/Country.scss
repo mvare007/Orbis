@@ -2,34 +2,36 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    vertical-align: top;
+    align-items: center;
     text-align: center;
+    margin: 0;
 
     img {
-      height: 60%;
-      width: 40%;
+      height: 65%;
+      width: 47%;
       margin: auto;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
 
     h4 {
       color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      margin-bottom: 60px;
+      font-size: 1.3em;
+    }
+
+    .table-dark {
+        max-width: 500px;
+      th {
+        font-size:calc(3px + 0.5vw);
+        color: #323A40;
+        background-color: #F2EEE8;
+      }
+      td {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        font-size:calc(4px + 1vw);
+      }
     }
   }
-
-  .table-dark {
-    font-size: 0.6em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin: 0 auto;
-    border: 1px solid black;
-    max-width: 500px !important;
-
-    th {
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-  }
-
 

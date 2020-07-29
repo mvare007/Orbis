@@ -9,16 +9,44 @@
 
 .flags {
   grid-area: 1 / 1 / 7 / 3;
-  background-color: #343A40;
-  min-width: 30vw;
-  align-content: center;
-  justify-items: center;
+  width: 30vw;
+  background: rgb(138,137,134);
+  background: linear-gradient(90deg, rgba(138,137,134,1) 13%, rgba(52,58,64,1) 88%);
+  border-right: 10px solid gray;
   .search  {
-    margin: 30px 10px 30px 10px;
-    max-width: 65%;
-    min-width: 30%;
-    font-size: 0.8em;
-    margin: 20px 10px 20px 10px;
+    font-size: 0.6em;
+    margin: 30px;
+    border-bottom: 5px solid black;
+  }
+  // Smallest device
+  @media (min-width: 100px) and (max-width: 575px) {
+    .search {
+      max-width: 55%;
+      min-width: 40%;
+    }
+  }
+
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .search {
+      max-width: 55%;
+      min-width: 40%;
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .search {
+      max-width: 100%;
+      min-width: 50%;
+    }
+  }
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .search {
+      max-width: 100%;
+      min-width: 80%;
+    }
   }
 }
 .country-panel {
@@ -27,6 +55,7 @@
 
 .mapbox {
   grid-area: 1 / 5 / 4 / 7;
+  margin-left: 16px;
 }
 
 .weather {

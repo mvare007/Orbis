@@ -1,4 +1,6 @@
 import React from 'react';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
 import './Country.scss';
 
 const Country = ({country}) => {
@@ -10,8 +12,8 @@ const Country = ({country}) => {
 
   const renderTable = () => {
     return (
-      <div className="table table-responsive table-striped ">
-        <table className="table table-dark">
+      <div className="table-responsive-lg">
+        <table className="table table-dark table-striped">
           <tbody>
             <tr>
               <th scope="row">Region:</th>
@@ -70,14 +72,19 @@ const Country = ({country}) => {
   return (
     <div>
       <div className="country" >
-        <img src={flag} alt={name + " flag"} />
+        <TransformWrapper>
+          <TransformComponent>
+            <img src={flag} alt={name + " flag"} />
+          </TransformComponent>
+        </TransformWrapper>
         <h4>{name}</h4>
-      </div>
-      <div>
-        {renderTable()}
+        <div>
+          {renderTable()}
+        </div>
       </div>
     </div>
   );
 }
 
 export default Country;
+
