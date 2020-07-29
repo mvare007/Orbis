@@ -69,7 +69,7 @@ class App extends Component {
         <div className="flags">
           <input
             className="search"
-            placeholder="Search countries..."
+            placeholder="Search..."
             onChange={this.handleSearch} />
           <CountriesList
             countries={filteredCountries}
@@ -94,8 +94,8 @@ class App extends Component {
                filter={'countries', ['in', 'ADM0_A3_IS'].concat([selectedCountry.alpha3Code || ""])}
                type='fill'
                paint={{
-                 'fill-color': '#EEEB41',
-                 'fill-outline-color': 'red',
+                 'fill-color': 'tomato',
+                 'fill-outline-color': 'lime',
                  'fill-opacity': 0.5
                }}  />
           </Map>
