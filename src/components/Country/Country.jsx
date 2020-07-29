@@ -10,7 +10,7 @@ const Country = ({country}) => {
 
   const renderTable = () => {
     return (
-      <div className="table-responsive">
+      <div className="table table-responsive table-striped ">
         <table className="table table-dark">
           <tbody>
             <tr>
@@ -46,7 +46,7 @@ const Country = ({country}) => {
               <td>{population.toLocaleString()}</td>
             </tr>
             <tr>
-              <th scope="row">Currencies:</th>
+              <th scope="row">Currency:</th>
               <td>{Object.values(currencies[0])[1]}</td>
             </tr>
             <tr>

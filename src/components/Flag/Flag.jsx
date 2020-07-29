@@ -10,7 +10,7 @@ const Flag = ({flag, name, id, onSelect, selected}) => {
    }
 
   const style = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${flag})`
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${flag})`
   };
 
   const classNames = selected ? 'flag selected' : 'flag';
