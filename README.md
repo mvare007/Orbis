@@ -1,7 +1,9 @@
-Work in progress. 
+# Orbis
 
-== Tools used so far: ==
-REST Countries API(restcountries.eu)
-Moment.js
-OpenWeather API
-MapBox
+Work in progress...
+
+  - MapBox
+  - OpenWeather API
+  - Moment.js
+  - REST Countries API(restcountries.eu)
+
