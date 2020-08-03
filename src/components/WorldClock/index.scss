@@ -1,0 +1,54 @@
+.worldClock {
+  display: flex;;
+  font-size:calc(4px + 1vw);
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.city {
+  margin-right: 30px;
+  background: gold;
+  border-radius: 20%/50%;
+  padding: 0px 10px;
+  color: #343A40;
+}
+
+.clock {
+  color: white;
+}
+
+.card-city {
+  display: flex;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(138,137,134,1) 65%, rgba(52,58,64,1) 40%);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.card-city img {
+  height: 50%;
+  width: 50%;
+  object-fit: cover;
+}
+
+.card-city h2 {
+  font-size: calc(4px + 1vw);
+  font-weight: bold;
+  margin: 30px;
+}
+
+.card-city span {
+  font-size: calc(3px + 1vw);
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-city .card-city-clock {
+  padding: 16px;
+  font-size: calc(2px + 1vw);
+  margin: 10px;
+}

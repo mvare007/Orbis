@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Flag.scss';
+import './index.scss';
 
 const Flag = ({flag, name, id, onSelect, selected}) => {
 

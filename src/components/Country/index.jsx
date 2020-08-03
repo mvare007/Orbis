@@ -1,15 +1,14 @@
 import React from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
-import './Country.scss';
-import Timezones from '../Timezones/Timezones'
+import './index.scss';
 
 const Country = ({country}) => {
   const { name, flag, topLevelDomain,
           capital, region, subregion,
           population, demonym, area,
           gini, nativeName, callingCodes,
-          currencies, languages, alpha2Code } = country
+          currencies, languages, latlng } = country
 
   const renderTable = () => {
     return (
@@ -53,6 +52,10 @@ const Country = ({country}) => {
               <td>{Object.values(currencies[0])[1]}</td>
             </tr>
             <tr>
+              <th scope="row">Lat/Long::</th>
+              <td>{latlng[0]+ ", " + latlng[1]}</td>
+            </tr>
+            <tr>
               <th scope="row">Gini:</th>
               <td>{gini || "-"}</td>
             </tr>
@@ -73,7 +76,6 @@ const Country = ({country}) => {
   return (
     <div>
       <div className="country" >
-      <Timezones country={alpha2Code}/>
         <TransformWrapper>
           <TransformComponent>
             <img src={flag} alt={name + " flag"} />
