@@ -1,26 +1,7 @@
-.worldClock {
-  display: flex;;
-  font-size:calc(4px + 1vw);
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.city {
-  margin-right: 30px;
-  background: gold;
-  border-radius: 20%/50%;
-  padding: 0px 10px;
-  color: #343A40;
-}
-
-.clock {
-  color: white;
-}
-
 .card-city {
   display: flex;
   overflow: hidden;
-  background: linear-gradient(90deg, rgba(138,137,134,1) 65%, rgba(52,58,64,1) 40%);
+  background: gray;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   justify-content: space-between;
   align-items: center;
