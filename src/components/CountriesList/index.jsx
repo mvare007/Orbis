@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Flag from '../Flag/Flag';
-import './CountriesList.scss'
+import Flag from '../Flag/index';
+import './index.scss'
 
 const CountriesList = ({countries, selectedCountry, onSelect}) => {
   return (

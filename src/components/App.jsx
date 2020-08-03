@@ -4,8 +4,9 @@ import ReactMapboxGl, { Layer, Source } from 'react-mapbox-gl';
 import './App.scss';
 import loader from '../images/loader.gif';
 
-import CountriesList from './CountriesList/CountriesList';
-import Country from './Country/Country';
+import CountriesList from './CountriesList/index';
+import Country from './Country/index';
+import Timezones from './Timezones/index'
 
 const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
 
@@ -24,8 +25,8 @@ class App extends Component {
     selectedCountry: {},
     loaded: false,
     search: '',
-    center: [-7.8536599, 39.557191],
-    zoom: [1]
+    center: [-90, 90],
+    zoom: [0]
   }
 
   componentDidMount() {
@@ -84,8 +85,8 @@ class App extends Component {
         <div className="mapbox">
           <Map
             center={center}
-            zoom={[5]}
-            containerStyle={{ height: '100%', width: '100%' }}
+            zoom={[this.state.zoom]}
+            containerStyle={{ height: '50vh', width: '100%' }}
             style="mapbox://styles/davidchopin/cjtz90km70tkk1fo6oxifkd67">
             <Source id="countries" tileJsonSource={RASTER_SOURCE_OPTIONS} />
              <Layer
@@ -95,14 +96,14 @@ class App extends Component {
                type='fill'
                paint={{
                  'fill-color': 'tomato',
-                 'fill-outline-color': 'lime',
+                 'fill-outline-color': 'red',
                  'fill-opacity': 0.5
                }}  />
           </Map>
         </div>
 
-        <div className="weather">
-          Weather
+        <div className="time">
+          { loaded ? <Timezones country={selectedCountry.alpha2Code}/> : <img src={loader} id="loader"/> }
         </div>
 
       </div>
