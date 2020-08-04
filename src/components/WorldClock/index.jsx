@@ -21,7 +21,7 @@ class WorldClock extends Component {
 
   renderWeather = () => {
     if (this.state.weather.main !== undefined) {
-      const { temp, humidity, pressure  } = this.state.weather.main;
+      const { temp } = this.state.weather.main;
       const { icon } = this.state.weather.weather[0]
       const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
