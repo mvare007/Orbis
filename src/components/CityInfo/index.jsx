@@ -5,7 +5,7 @@ import './index.scss';
 
 const API_KEY = "1266122f733dd27af625e17e74ef7e68";
 
-class WorldClock extends Component {
+class CityInfo extends Component {
   state = {
     weather: []
   }
@@ -21,16 +21,17 @@ class WorldClock extends Component {
 
   renderWeather = () => {
     if (this.state.weather.main !== undefined) {
-      const { temp, humidity, pressure  } = this.state.weather.main;
-      const { icon } = this.state.weather.weather[0]
+      const { temp } = this.state.weather.main;
+      const { description, icon } = this.state.weather.weather[0]
       const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
       return(
         <div className="weather">
           <span>{parseInt(temp)}°C</span>
           <img src={iconUrl} alt="weather"/>
+          <span id="weatherDescription">{description}</span>
         </div>
-      );
+       );
     }
   }
 
@@ -39,10 +40,10 @@ class WorldClock extends Component {
 
     return(
       <div className="card-city">
-        <h2>{name} </h2>
+        <h2>{name}</h2>
         <Clock
-          className="card-city-clock"
-          format={'HH:mm A'}
+          className="clock"
+          format={'HH:mm'}
           ticking={true}
           timezone={timezone} />
           {this.renderWeather()}
@@ -51,5 +52,5 @@ class WorldClock extends Component {
   }
 }
 
-export default WorldClock;
+export default CityInfo;
 

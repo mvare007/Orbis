@@ -1,0 +1,46 @@
+.card-city {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 2fr;
+  grid-gap: 0px;
+  background: linear-gradient(180deg, hsl(36, 2%, 53%) 6%, hsl(210, 10%, 23%) 80%);
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 13px;
+  height: 3rem;
+  border: 0.5px groove #7E7E7B;
+}
+
+.card-city h2 {
+  font-size: calc(3.5px + 1vw);
+  font-weight: bold;
+  margin: 0px auto;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.card-city .clock {
+  font-size: calc(4px + 1vw);
+  color: white;
+}
+
+.card-city span {
+  font-size: calc(2.5px + 1vw);
+  color: white;
+}
+.card-city img {
+  height: 30%;
+  width: 30%;
+  -webkit-filter: brightness(2);
+  filter: brightness(2);
+}
+
+#weatherDescription{
+  font-size: calc(3px + 0.5vw);
+  color: white;
+  white-space: nowrap;
+}
+
+

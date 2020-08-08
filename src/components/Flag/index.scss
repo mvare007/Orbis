@@ -7,7 +7,7 @@
   color: white;
   font-weight: bold;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   cursor: pointer;
   border: 0.1px solid black;
@@ -16,6 +16,11 @@
     border: 1px solid #F2EEE8;
     opacity: 0.7;
     transition: all 0.2s ease;
+    &:active {
+      transform: scale(0.5) ;
+      -webkit-transform: scale(0.9) ;
+      -moz-transform: scale(0.9) ;
+    }
   }
 }
 
@@ -23,14 +28,14 @@
 @media (min-width: 100px) and (max-width: 575px) {
   .flag {
     height: 28px;
-    width: 50px;
+    width: 43px;
     font-size: 0px;
   }
 }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .flag {
-    height: 25px;
+    height: 33px;
     width: 50px;
     font-size: 0px;
   }
@@ -54,7 +59,6 @@
 }
 
 .selected {
-  border: 5px solid #F2EEE8;
-  border-radius: 6px;
+  border: 6px solid #F2EEE8;
   transition: all 0.1s ease-in-out;
 }

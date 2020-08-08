@@ -1,38 +1,34 @@
   .country {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-
     img {
-      height: 69%;
-      width: 50%;
+      height: 73%;
+      width: 56%;
       max-height: 100%;
       max-width: 100%;
-      margin: auto;
-      margin-top: 20px;
-      margin-bottom: 40px;
+      margin: 1rem auto;
       overflow: visible;
     }
 
     h4 {
       color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-      margin-bottom: 60px;
+      text-shadow: 0px 0px 2px #8A8885;
+      margin-bottom: 30px;
       font-size: 1.3em;
     }
 
     .table-dark {
         width: 100%;
       th {
-        font-size:calc(3px + 0.5vw);
+        font-size:calc(2px + 1vw);
         color: #323A40;
         background-color: #F2EEE8;
       }
       td {
         text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        font-size:calc(4px + 1vw);
+        font-size:calc(6px + 1vw);
       }
     }
   }
