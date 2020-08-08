@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.scss';
 
-const Flag = ({flag, name, id, onSelect, selected}) => {
+const Flag = ({ flag, name, onSelect, selected }) => {
 
   const handleClick = () => {
     onSelect(name);
@@ -16,7 +16,7 @@ const Flag = ({flag, name, id, onSelect, selected}) => {
 
   return (
     <div className={classNames} style={style} onClick={handleClick}>
-      {name}
+      {name.split("(")[0]}
     </div>
 
   );

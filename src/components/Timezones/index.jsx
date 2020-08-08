@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment-timezone';
 
-import WorldClock from '../WorldClock/index';
+import CityInfo from '../CityInfo/index';
 import './index.scss';
 
 const Timezones = ({country}) => {
@@ -11,7 +11,7 @@ const Timezones = ({country}) => {
   return (
     <div className="timeZones">
       {timeZones.map(timezone => {
-        return <WorldClock
+        return <CityInfo
                 timezone={timezone}
                 name={timezone.split('/').pop().replace(/[_-]/g, " ")}
                 key={timezone}/>

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import ReactMapboxGl, { Layer, Source } from 'react-mapbox-gl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import './App.scss';
 import loader from '../images/loader.gif';
 
 import CountriesList from './CountriesList/index';
 import Country from './Country/index';
-import Timezones from './Timezones/index'
+import Timezones from './Timezones/index';
+import Introduction from './Introduction/index';
 
 const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
 
@@ -44,7 +45,6 @@ class App extends Component {
 
     this.setState({
       search: value,
-      loaded: false
     });
   }
 
@@ -62,10 +62,10 @@ class App extends Component {
   }
 
   render() {
-
     const { countries, search, selectedCountry, loaded, center } = this.state;
     const filteredCountries = countries.filter(country => country.name.match(new RegExp(search, 'i')));
-    const mapboxStyle = "mapbox://styles/davidchopin/cjtz90km70tkk1fo6oxifkd67";
+    const mapboxStyle = ["mapbox://styles/davidchopin/cjtz90km70tkk1fo6oxifkd67",
+                        { height: '50vh', width: '100%' }];
 
     return (
       <div className="app">
@@ -80,7 +80,8 @@ class App extends Component {
             <input
               className="responsive-font form-control"
               placeholder="Search..."
-              onChange={this.handleSearch} />
+              onChange={this.handleSearch}
+              autoFocus={true} />
             </div>
           <CountriesList
             countries={filteredCountries}
@@ -89,15 +90,15 @@ class App extends Component {
         </div>
 
         <div className="country-panel">
-        { loaded ? <Country country={selectedCountry} /> : <img src={loader} id="loader"/> }
+        { loaded ? <Country country={selectedCountry} /> : <Introduction/> }
         </div>
 
         <div className="mapbox">
           <Map
             center={center}
             zoom={[this.state.zoom]}
-            containerStyle={{ height: '50vh', width: '100%' }}
-            style={mapboxStyle}>
+            containerStyle={mapboxStyle[1]}
+            style={mapboxStyle[0]}>
             <Source id="countries" tileJsonSource={RASTER_SOURCE_OPTIONS} />
              <Layer
                id='countries'
@@ -106,7 +107,7 @@ class App extends Component {
                type='fill'
                paint={{
                  'fill-color': 'tomato',
-                 'fill-outline-color': 'red',
+                 'fill-outline-color': 'lime',
                  'fill-opacity': 0.5
                }}  />
           </Map>
