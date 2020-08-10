@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 6px;
   grid-row-gap: 0px;
   grid-auto-flow: dense;
   background: #343A40;
@@ -11,7 +11,6 @@
 
 .flags {
   grid-area: 1 / 1 / 7 / 3;
-  width: 30vw;
   background: rgb(138,137,134);
   background: linear-gradient(90deg, rgba(138,137,134,1) 13%, rgba(52,58,64,1) 88%);
   overflow: scroll;

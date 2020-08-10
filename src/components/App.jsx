@@ -9,6 +9,7 @@ import loader from '../images/loader.gif';
 import CountriesList from './CountriesList/index';
 import Country from './Country/index';
 import Timezones from './Timezones/index';
+import CircleInferno from './Introduction/circleInferno';
 import Introduction from './Introduction/index';
 
 const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
@@ -21,6 +22,7 @@ const RASTER_SOURCE_OPTIONS = {
   "type": "vector",
   "url": "mapbox://mvare007.583q5hvi"
 };
+
 
 class App extends Component {
   state = {
@@ -90,7 +92,8 @@ class App extends Component {
         </div>
 
         <div className="country-panel">
-        { loaded ? <Country country={selectedCountry} /> : <Introduction/> }
+        { loaded ? <Country country={selectedCountry} />
+                 : [<CircleInferno/>, <Introduction/>]  }
         </div>
 
         <div className="mapbox">
@@ -106,8 +109,8 @@ class App extends Component {
                filter={'countries', ['in', 'ADM0_A3_IS'].concat([selectedCountry.alpha3Code || ""])}
                type='fill'
                paint={{
-                 'fill-color': 'tomato',
-                 'fill-outline-color': 'lime',
+                 'fill-color': '#C2323A',
+                 'fill-outline-color': '#FFEC48',
                  'fill-opacity': 0.5
                }}  />
           </Map>

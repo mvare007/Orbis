@@ -15,31 +15,24 @@
     h4 {
       color: white;
       text-shadow: 0px 0px 2px #8A8885;
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
       font-size: 1.3em;
     }
 
     .table-dark {
-        width: 100%;
       th {
-        font-size:calc(2px + 1vw);
-        color: #323A40;
-        background-color: #F2EEE8;
+        font-size:calc(1.5px + 1vw);
+        color: white;
+        background: #343A40;
+        border: 4px groove #7E7E7B;
+        opacity: 0.8;
+        width: 40%;
       }
       td {
         text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        font-size:calc(6px + 1vw);
+        font-size:calc(4px + 1vw);
+        background: linear-gradient(180deg, hsl(36, 2%, 53%) 6%, hsl(210, 10%, 23%) 80%);
+        border: 10px groove #7E7E7B;
       }
     }
-  }
-
-  .trigger {
-    position: absolute;
-    opacity: 1;
-    transition: 0.1s;
-
-  }
-  .trigger-hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
+}
