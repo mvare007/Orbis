@@ -83,14 +83,16 @@ class App extends Component {
         </div>
 
         <div className="mapbox">
-          <MapBox
-            center={center}
-            zoom={zoom}
-            selectedCountry={selectedCountry}/>
+          { loaded ?  <MapBox
+                        center={center}
+                        zoom={zoom}
+                        selectedCountry={selectedCountry}/>
+                        : null }
         </div>
 
         <div className="time">
-          { loaded ? <Timezones country={selectedCountry.alpha2Code}/> : <CircleInferno/> }
+          { loaded ? <Timezones country={selectedCountry.alpha2Code}/>
+                     : <CircleInferno/> }
         </div>
 
       </div>

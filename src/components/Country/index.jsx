@@ -68,7 +68,7 @@ const Country = ({country}) => {
 
   return (
     <div>
-      <div className="country fade-in" >
+      <div className="country-info fade-in" >
         <TransformWrapper>
           <TransformComponent>
             <img src={flag} alt={name + " flag"} />

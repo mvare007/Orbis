@@ -1,7 +1,35 @@
 .title {
   text-align: center;
-  font-size: 2rem;
-  color: white;
+  font-size: calc(18px + 5vw);
+  color: #fdfdff;
+  font-weight: 700;
+  background: linear-gradient(90deg, rgba(65,112,184,1) 0%, rgba(99,125,70,0.9304096638655462) 37%, rgba(200,162,124,0.9304096638655462) 54%, rgba(65,112,184,1) 100%);
+  margin-top: 3rem;
+  border-radius: 10px 10px 70% 70%;
+  border:  1px solid #0000;
+  padding-bottom: 20px;
+  text-shadow: 1px 1px 1px #0000,
+         1px 2px 1px #0000,
+         1px 3px 1px #0000,
+         1px 4px 1px #0000,
+         1px 5px 1px #0000,
+         1px 6px 1px #0000,
+         1px 7px 1px #0000,
+         1px 8px 1px #0000,
+         1px 9px 1px #0000,
+         1px 10px 1px #0000,
+     1px 18px 6px rgba(16,16,16,0.4),
+     1px 22px 10px rgba(16,16,16,0.2),
+     1px 25px 35px rgba(16,16,16,0.2),
+     1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.presentation {
+  text-align: center;
+  font-size: calc(5px + 1vw);
+  color: #fdfdff;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #000;
 }
 
 .earth {
@@ -30,7 +58,7 @@
   .earth {
     width: 8rem;
     height: 8rem;
-    margin-top: 6rem;
+    margin-top: 12rem;
   }
 }
 

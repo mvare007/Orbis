@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import range from "lodash.range";
 import { scaleSymlog } from "d3-scale";
-import { interpolateCubehelixDefault } from "d3-scale-chromatic";
+import { interpolateGnBu } from "d3-scale-chromatic";
 import { easeElastic } from "d3-ease";
 import { NodeGroup } from "react-move";
 
@@ -21,7 +21,7 @@ class CircleInferno extends Component {
     window.addEventListener("touchmove", this.handleTouchMove);
   }
 
-  handleMouseMove({ movementX: x, movementY: y }) {
+  handleMouseMove({ pageX: x, pageY: y }) {
     this.setState({ x, y });
   }
 
@@ -61,14 +61,15 @@ class CircleInferno extends Component {
               <div
                 key={key}
                 style={{
-                  backgroundColor: interpolateCubehelixDefault(linear(x)),
-                  width: 15,
-                  height: 15,
+                  backgroundColor: interpolateGnBu(linear(x)),
+                  width: 40,
+                  height: 40,
                   borderRadius: 50,
-                  opacity: 0.1,
+                  opacity: 0.8,
                   WebkitTransform: `translate3d(${x - 25}px, ${y - 25}px, 4rem)`,
                   transform: `translate3d(${x - 25}px, ${y - 25}px, 4rem)`,
-                  zIndex: nodes.length - index + 200
+                  zIndex: nodes.length - index + 200,
+                  overflow: 'hidden'
                 }}
               />
             ))}
