@@ -1,28 +1,17 @@
 import React, { Component } from 'react';
-import ReactMapboxGl, { Layer, Source } from 'react-mapbox-gl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import './App.scss';
-import loader from '../images/loader.gif';
 
-import CountriesList from './CountriesList/index';
-import Country from './Country/index';
-import Timezones from './Timezones/index';
+import CountriesList from './CountriesList';
+import Country from './Country';
+import MapBox from './Map';
+import Timezones from './Timezones';
 import CircleInferno from './Introduction/circleInferno';
-import Introduction from './Introduction/index';
+import Earth from './Introduction';
 
 const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
-
-const Map = ReactMapboxGl({
-  accessToken: 'pk.eyJ1IjoibXZhcmUwMDciLCJhIjoiY2s2Y2FocWI3MDBobTNrbXdhZ3pmZnRiOCJ9.F0JHDGeqdYEJrB-XCJHr9Q'
-})
-
-const RASTER_SOURCE_OPTIONS = {
-  "type": "vector",
-  "url": "mapbox://mvare007.583q5hvi"
-};
-
 
 class App extends Component {
   state = {
@@ -46,7 +35,7 @@ class App extends Component {
     const { value } = event.target;
 
     this.setState({
-      search: value,
+      search: value
     });
   }
 
@@ -64,14 +53,11 @@ class App extends Component {
   }
 
   render() {
-    const { countries, search, selectedCountry, loaded, center } = this.state;
+    const { countries, search, selectedCountry, loaded, center, zoom } = this.state;
     const filteredCountries = countries.filter(country => country.name.match(new RegExp(search, 'i')));
-    const mapboxStyle = ["mapbox://styles/davidchopin/cjtz90km70tkk1fo6oxifkd67",
-                        { height: '50vh', width: '100%' }];
 
     return (
       <div className="app">
-
         <div className="flags">
           <div className="search input-group">
             <div className="input-group-prepend">
@@ -91,33 +77,20 @@ class App extends Component {
             onSelect={this.handleSelect}/>
         </div>
 
-        <div className="country-panel">
-        { loaded ? <Country country={selectedCountry} />
-                 : [<CircleInferno/>, <Introduction/>]  }
+        <div className="country">
+          { loaded ? <Country country={selectedCountry} />
+                     : <Earth/> }
         </div>
 
         <div className="mapbox">
-          <Map
+          <MapBox
             center={center}
-            zoom={[this.state.zoom]}
-            containerStyle={mapboxStyle[1]}
-            style={mapboxStyle[0]}>
-            <Source id="countries" tileJsonSource={RASTER_SOURCE_OPTIONS} />
-             <Layer
-               id='countries'
-               sourceLayer='ne_10m_admin_0_countries-5zwxab'
-               filter={'countries', ['in', 'ADM0_A3_IS'].concat([selectedCountry.alpha3Code || ""])}
-               type='fill'
-               paint={{
-                 'fill-color': '#C2323A',
-                 'fill-outline-color': '#FFEC48',
-                 'fill-opacity': 0.5
-               }}  />
-          </Map>
+            zoom={zoom}
+            selectedCountry={selectedCountry}/>
         </div>
 
         <div className="time">
-          { loaded ? <Timezones country={selectedCountry.alpha2Code}/> : <img src={loader} id="loader"/> }
+          { loaded ? <Timezones country={selectedCountry.alpha2Code}/> : <CircleInferno/> }
         </div>
 
       </div>

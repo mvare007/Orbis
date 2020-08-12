@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import range from "lodash.range";
-import { scaleLinear } from "d3-scale";
-import { interpolateTurbo } from "d3-scale-chromatic";
+import { scaleSymlog } from "d3-scale";
+import { interpolateCubehelixDefault } from "d3-scale-chromatic";
 import { easeElastic } from "d3-ease";
 import { NodeGroup } from "react-move";
 
-const linear = scaleLinear().domain([0, window.innerWidth ]);
+const linear = scaleSymlog().domain([0, window.innerWidth ]);
 
 class CircleInferno extends Component {
   constructor(props) {
     super(props);
-    this.state = { x: 250, y: 300 };
+    this.state = { x: 250, y: 250 };
 
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.handleTouchMove = this.handleTouchMove.bind(this);
@@ -21,7 +21,7 @@ class CircleInferno extends Component {
     window.addEventListener("touchmove", this.handleTouchMove);
   }
 
-  handleMouseMove({ pageX: x, pageY: y }) {
+  handleMouseMove({ movementX: x, movementY: y }) {
     this.setState({ x, y });
   }
 
@@ -32,7 +32,7 @@ class CircleInferno extends Component {
   render() {
     return (
       <NodeGroup
-        data={range(6).map(d => {
+        data={range(40).map(d => {
           return {
             key: `key-${d}`,
             x: this.state.x,
@@ -61,14 +61,14 @@ class CircleInferno extends Component {
               <div
                 key={key}
                 style={{
-                  backgroundColor: interpolateTurbo(linear(x)),
-                  width: 50,
-                  height: 50,
+                  backgroundColor: interpolateCubehelixDefault(linear(x)),
+                  width: 15,
+                  height: 15,
                   borderRadius: 50,
-                  opacity: 0.3,
-                  WebkitTransform: `translate3d(${x - 25}px, ${y - 25}px, 0)`,
-                  transform: `translate3d(${x - 25}px, ${y - 25}px, 0)`,
-                  zIndex: nodes.length - index + 2000
+                  opacity: 0.1,
+                  WebkitTransform: `translate3d(${x - 25}px, ${y - 25}px, 4rem)`,
+                  transform: `translate3d(${x - 25}px, ${y - 25}px, 4rem)`,
+                  zIndex: nodes.length - index + 200
                 }}
               />
             ))}

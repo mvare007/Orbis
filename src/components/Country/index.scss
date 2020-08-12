@@ -4,8 +4,8 @@
     align-items: center;
     text-align: center;
     img {
-      height: 73%;
-      width: 56%;
+      height: 76%;
+      width: 59%;
       max-height: 100%;
       max-width: 100%;
       margin: 1rem auto;
@@ -21,18 +21,45 @@
 
     .table-dark {
       th {
-        font-size:calc(1.5px + 1vw);
+        font-size:calc(1.3px + 0.5vw);
         color: white;
         background: #343A40;
         border: 4px groove #7E7E7B;
         opacity: 0.8;
         width: 40%;
+        white-space: nowrap;
       }
       td {
         text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        font-size:calc(4px + 1vw);
+        font-size:calc(5px + 1vw);
         background: linear-gradient(180deg, hsl(36, 2%, 53%) 6%, hsl(210, 10%, 23%) 80%);
         border: 10px groove #7E7E7B;
+        white-space: nowrap;
+      }
+      tr {
+        line-height: 5px;
       }
     }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

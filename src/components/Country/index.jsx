@@ -13,7 +13,7 @@ const Country = ({country}) => {
 
   const renderTable = () => {
     return (
-      <div className="table-responsive">
+      <div className="table-responsive-sm">
         <table className="table table-dark">
           <tbody>
             <tr>
@@ -68,7 +68,7 @@ const Country = ({country}) => {
 
   return (
     <div>
-      <div className="country" >
+      <div className="country fade-in" >
         <TransformWrapper>
           <TransformComponent>
             <img src={flag} alt={name + " flag"} />

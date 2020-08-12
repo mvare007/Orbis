@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment-timezone';
 
-import CityInfo from '../CityInfo/index';
+import CityInfo from '../CityInfo';
 import './index.scss';
 
 const Timezones = ({country}) => {
