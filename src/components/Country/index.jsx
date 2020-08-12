@@ -4,15 +4,16 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import './index.scss';
 
 const Country = ({country}) => {
+
   const { name, flag, topLevelDomain,
           capital, subregion,
           population, demonym, area,
-          gini, nativeName, callingCodes,
+          nativeName, callingCodes,
           currencies, languages, latlng } = country
 
   const renderTable = () => {
     return (
-      <div className="table-responsive">
+      <div className="table-responsive-sm">
         <table className="table table-dark">
           <tbody>
             <tr>
@@ -49,11 +50,7 @@ const Country = ({country}) => {
             </tr>
             <tr>
               <th scope="row">Lat/Long:</th>
-              <td>{latlng[0]+ ", " + latlng[1]}</td>
-            </tr>
-            <tr>
-              <th scope="row">Gini:</th>
-              <td>{gini || "-"}</td>
+              <td>{Math.round(latlng[0])+ " , " + Math.round(latlng[1])}</td>
             </tr>
             <tr>
               <th scope="row">Calling Code:</th>
@@ -71,7 +68,7 @@ const Country = ({country}) => {
 
   return (
     <div>
-      <div className="country" >
+      <div className="country-info fade-in" >
         <TransformWrapper>
           <TransformComponent>
             <img src={flag} alt={name + " flag"} />

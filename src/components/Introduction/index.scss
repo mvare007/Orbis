@@ -1,0 +1,111 @@
+.title {
+  text-align: center;
+  font-size: calc(18px + 5vw);
+  color: #fdfdff;
+  font-weight: 700;
+  background: linear-gradient(90deg, rgba(65,112,184,1) 0%, rgba(99,125,70,0.9304096638655462) 37%, rgba(200,162,124,0.9304096638655462) 54%, rgba(65,112,184,1) 100%);
+  margin-top: 3rem;
+  border-radius: 10px 10px 70% 70%;
+  border:  1px solid #0000;
+  padding-bottom: 20px;
+  text-shadow: 1px 1px 1px #0000,
+         1px 2px 1px #0000,
+         1px 3px 1px #0000,
+         1px 4px 1px #0000,
+         1px 5px 1px #0000,
+         1px 6px 1px #0000,
+         1px 7px 1px #0000,
+         1px 8px 1px #0000,
+         1px 9px 1px #0000,
+         1px 10px 1px #0000,
+     1px 18px 6px rgba(16,16,16,0.4),
+     1px 22px 10px rgba(16,16,16,0.2),
+     1px 25px 35px rgba(16,16,16,0.2),
+     1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.presentation {
+  text-align: center;
+  font-size: calc(5px + 1vw);
+  color: #fdfdff;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.earth {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 1rem auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .earth {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 10rem;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .earth {
+    width: 8rem;
+    height: 8rem;
+    margin-top: 12rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .earth {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .earth {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .earth {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+.earth:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: -20px -20px 50px 2px #000 inset;
+  border-radius: 50%;
+}
+
+.earth > div {
+  width: 200%;
+  height: 100%;
+  animation: spin 30s linear alternate infinite;
+  background-image: url("Planet_Earth.jpg");
+  background-size: cover;
+}
+@keyframes spin {
+  to {
+    transform: translateX(-50%);
+  }
+}
