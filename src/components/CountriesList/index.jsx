@@ -13,8 +13,7 @@ const CountriesList = ({countries, selectedCountry, onSelect}) => {
                 onSelect={onSelect}
                 selected={selectedCountry.name === country.name}
                 flag={country.flag}
-                name={country.name}
-                country={country} />
+                name={country.name} />
       })}
     </div>
   );

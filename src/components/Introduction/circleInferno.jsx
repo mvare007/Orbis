@@ -32,7 +32,7 @@ class CircleInferno extends Component {
   render() {
     return (
       <NodeGroup
-        data={range(40).map(d => {
+        data={range(8).map(d => {
           return {
             key: `key-${d}`,
             x: this.state.x,
@@ -62,10 +62,14 @@ class CircleInferno extends Component {
                 key={key}
                 style={{
                   backgroundColor: interpolateGnBu(linear(x)),
-                  width: 40,
-                  height: 40,
+                  backgroundImage: `url(${this.props.country.flag})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  backgroundSize: '80px 50px',
+                  width: 80,
+                  height: 80,
                   borderRadius: 50,
-                  opacity: 0.8,
+                  opacity: 0.5,
                   WebkitTransform: `translate3d(${x - 25}px, ${y - 25}px, 4rem)`,
                   transform: `translate3d(${x - 25}px, ${y - 25}px, 4rem)`,
                   zIndex: nodes.length - index + 200,

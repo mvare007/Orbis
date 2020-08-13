@@ -55,6 +55,8 @@ class App extends Component {
   render() {
     const { countries, search, selectedCountry, loaded, center, zoom } = this.state;
     const filteredCountries = countries.filter(country => country.name.match(new RegExp(search, 'i')));
+    let randomCountry = countries[Math.floor(Math.random() * countries.length)] || [];
+
 
     return (
       <div className="app">
@@ -92,7 +94,7 @@ class App extends Component {
 
         <div className="time">
           { loaded ? <Timezones country={selectedCountry.alpha2Code}/>
-                     : <CircleInferno/> }
+                     : <CircleInferno country={randomCountry} /> }
         </div>
 
       </div>
