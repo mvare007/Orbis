@@ -11,7 +11,7 @@ class CityInfo extends Component {
   }
 
   componentDidMount() {
-    const openWeather = `http://api.openweathermap.org/data/2.5/weather?q=${this.props.name}&units=metric&appid=${API_KEY}`
+    const openWeather = `https://api.openweathermap.org/data/2.5/weather?q=${this.props.name}&units=metric&appid=${API_KEY}`
     fetch(openWeather)
     .then(response => response.json())
     .then(data => {
