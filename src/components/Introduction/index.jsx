@@ -5,8 +5,10 @@ import './index.scss';
 const Earth = () => {
   return(
     <div>
-      <h1 className="title">Orbis</h1>
-      <p className="presentation">Get information on weather and time</p>
+      <div>
+        <h1 className="title">Orbis</h1>
+        <p className="presentation">Get information on weather and time</p>
+      </div>
       <div className="earth">
         <div>
         </div>

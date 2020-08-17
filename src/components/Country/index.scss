@@ -4,10 +4,30 @@
     align-items: center;
     text-align: center;
     width: 100%;
+
     img {
       margin: 1rem auto;
       overflow: visible;
       cursor: crosshair;
+    }
+
+    h4 {
+      color: white;
+      text-shadow: 0px 0px 2px #8A8885;
+      margin-bottom: 2rem;
+    }
+
+    .table-dark {
+      th {
+        color: white;
+        background: #343A40;
+        border: 4px groove #7E7E7B;
+      }
+      td {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        background: linear-gradient(180deg, hsl(55, 2%, 30%) 6%, hsl(210, 10%, 23%) 80%);
+        border: 10px groove #7E7E7B;
+      }
     }
 
     // Smallest device
@@ -15,6 +35,16 @@
       img {
         width: 100px;
         height: 55px;
+      }
+      h4 {
+        font-size: 1em;
+      }
+      th {
+        font-size: 0;
+
+      }
+      td {
+        font-size:calc(3.5px + 1vw);
       }
     }
 
@@ -24,6 +54,16 @@
         width: 120px;
         height: 75px;
       }
+      h4 {
+        font-size: 1.2em;
+      }
+      th {
+        font-size: 0;
+
+      }
+      td {
+        font-size:calc(3.6px + 1vw);
+      }
     }
 
     // Medium devices (tablets, 768px and up)
@@ -31,6 +71,15 @@
       img {
         width: 200px;
         height: 125px;
+      }
+      h4 {
+        font-size: 1.3em;
+      }
+      th {
+        font-size:calc(2px + 1vw);
+      }
+      td {
+        font-size:calc(4.5px + 1vw);
       }
     }
 
@@ -40,6 +89,15 @@
         width: 500px;
         height: 250px;
       }
+      h4 {
+        font-size: 1.5em;
+      }
+      th {
+        font-size:calc(2px + 1vw);
+      }
+      td {
+        font-size:calc(10px + 1vw);
+      }
     }
 
     // Extra large devices (large desktops, 1200px and up)
@@ -48,31 +106,14 @@
         width: 600px;
         height: 375px;
       }
-    }
-
-    h4 {
-      color: white;
-      text-shadow: 0px 0px 2px #8A8885;
-      margin-bottom: 2rem;
-      font-size: 1.3em;
-    }
-
-    .table-dark {
+      h4 {
+        font-size: 2em;
+      }
       th {
-        font-size:calc(1.3px + 0.5vw);
-        color: white;
-        background: #343A40;
-        border: 4px groove #7E7E7B;
+        font-size:calc(2px + 1vw);
       }
       td {
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        font-size:calc(2px + 1vw);
-        background: linear-gradient(180deg, hsl(55, 2%, 30%) 6%, hsl(210, 10%, 23%) 80%);
-        border: 10px groove #7E7E7B;
-        white-space: nowrap;
-      }
-      tr {
-        line-height: 5px;
+        font-size:calc(12px + 1vw);
       }
     }
 }

@@ -88,12 +88,12 @@ class App extends Component {
                         center={center}
                         zoom={zoom}
                         selectedCountry={selectedCountry}/>
-                        : <h2>Nmaijnib ncidnif</h2> }
+                        : null }
         </div>
 
         <div className="time">
           { loaded ? <Timezones country={selectedCountry.alpha2Code}/>
-                     : <span></span> }
+                     : null }
         </div>
 
       </div>
