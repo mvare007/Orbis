@@ -8,7 +8,6 @@ import CountriesList from './CountriesList';
 import Country from './Country';
 import MapBox from './Map';
 import Timezones from './Timezones';
-import CircleInferno from './Introduction/circleInferno';
 import Earth from './Introduction';
 
 const REST_COUNTRIES = 'https://restcountries.eu/rest/v2/all';
@@ -89,12 +88,12 @@ class App extends Component {
                         center={center}
                         zoom={zoom}
                         selectedCountry={selectedCountry}/>
-                        : null }
+                        : <h2>Nmaijnib ncidnif</h2> }
         </div>
 
         <div className="time">
           { loaded ? <Timezones country={selectedCountry.alpha2Code}/>
-                     : <CircleInferno country={randomCountry} /> }
+                     : <span></span> }
         </div>
 
       </div>

@@ -5,13 +5,49 @@
     text-align: center;
     width: 100%;
     img {
-      height: 76%;
-      width: 59%;
-      max-height: 100%;
-      max-width: 100%;
       margin: 1rem auto;
       overflow: visible;
       cursor: crosshair;
+    }
+
+    // Smallest device
+    @media (min-width: 100px) and (max-width: 575px) {
+      img {
+        width: 100px;
+        height: 55px;
+      }
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) {
+      img {
+        width: 120px;
+        height: 75px;
+      }
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+      img {
+        width: 200px;
+        height: 125px;
+      }
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      img {
+        width: 500px;
+        height: 250px;
+      }
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+      img {
+        width: 600px;
+        height: 375px;
+      }
     }
 
     h4 {
@@ -27,12 +63,11 @@
         color: white;
         background: #343A40;
         border: 4px groove #7E7E7B;
-        white-space: nowrap;
       }
       td {
         text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         font-size:calc(2px + 1vw);
-        background: linear-gradient(180deg, hsl(36, 2%, 53%) 6%, hsl(210, 10%, 23%) 80%);
+        background: linear-gradient(180deg, hsl(55, 2%, 30%) 6%, hsl(210, 10%, 23%) 80%);
         border: 10px groove #7E7E7B;
         white-space: nowrap;
       }
