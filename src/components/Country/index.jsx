@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import './index.scss';
@@ -10,6 +10,8 @@ const Country = ({country}) => {
           population, demonym, area,
           nativeName, callingCodes,
           currencies, languages, latlng } = country
+
+  const [ clicked, handleClick ] = useState(false);
 
   const renderTable = () => {
     return (
@@ -68,16 +70,23 @@ const Country = ({country}) => {
 
   return (
     <div>
-      <div className="country-info fade-in" >
-        <TransformWrapper>
-          <TransformComponent>
-            <img src={flag} alt={name + " flag"} />
-          </TransformComponent>
-        </TransformWrapper>
-        <h4>{name}</h4>
-        <div>
-          {renderTable()}
-        </div>
+    <input
+    className="toggle"
+      onClick={() => handleClick(!clicked)}
+      type="checkbox"
+      id="switch" />
+      <label htmlFor="switch">Toggle</label>
+      <div className="country-info fade-in">
+        { clicked ?
+          <div>{renderTable()}</div> :
+          <div>
+            <TransformWrapper>
+              <TransformComponent>
+                <img src={flag} alt={name + " flag"} />
+              </TransformComponent>
+            </TransformWrapper>
+            <h4>{name}</h4>
+          </div>}
       </div>
     </div>
   );

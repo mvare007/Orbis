@@ -32,10 +32,7 @@ class App extends Component {
 
   handleSearch = (event) => {
     const { value } = event.target;
-
-    this.setState({
-      search: value
-    });
+    this.setState({ search: value });
   }
 
   handleSelect = (countryName) => {
@@ -46,7 +43,7 @@ class App extends Component {
       selectedCountry: selectedCountry,
       center: [selectedCountry.latlng[1], selectedCountry.latlng[0]],
       loaded: true,
-      zoom: [4],
+      zoom: [3],
       search: ''
     });
   }
@@ -54,11 +51,10 @@ class App extends Component {
   render() {
     const { countries, search, selectedCountry, loaded, center, zoom } = this.state;
     const filteredCountries = countries.filter(country => country.name.match(new RegExp(search, 'i')));
-    let randomCountry = countries[Math.floor(Math.random() * countries.length)] || [];
-
 
     return (
       <div className="app">
+
         <div className="flags">
           <div className="search input-group">
             <div className="input-group-prepend">
@@ -72,15 +68,21 @@ class App extends Component {
               onChange={this.handleSearch}
               autoFocus={true} />
             </div>
+
           <CountriesList
             countries={filteredCountries}
             selectedCountry={selectedCountry}
             onSelect={this.handleSelect}/>
         </div>
 
-        <div className="country">
-          { loaded ? <Country country={selectedCountry} />
+        <div className="time">
+          { loaded ? <Timezones country={selectedCountry.alpha2Code} />
                      : <Earth/> }
+        </div>
+
+        <div className="country">
+          { loaded ? <Country country={selectedCountry}/>
+                     : null }
         </div>
 
         <div className="mapbox">
@@ -91,15 +93,12 @@ class App extends Component {
                         : null }
         </div>
 
-        <div className="time">
-          { loaded ? <Timezones country={selectedCountry.alpha2Code}/>
-                     : null }
-        </div>
-
       </div>
     );
   }
 }
 
 export default App;
+
+
 

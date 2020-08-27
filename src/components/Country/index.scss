@@ -4,22 +4,24 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    flex-shrink: 3;
 
     img {
-      margin: 1rem auto;
+      margin: 0 auto;
+      margin-bottom: 1rem;
       overflow: visible;
       cursor: crosshair;
     }
 
     h4 {
-      color: white;
+      color: #fff;
       text-shadow: 0px 0px 2px #8A8885;
-      margin-bottom: 2rem;
+      margin-top: 18px;
     }
 
     .table-dark {
       th {
-        color: white;
+        color: #fff;
         background: #343A40;
         border: 4px groove #7E7E7B;
       }
@@ -35,13 +37,13 @@
       img {
         width: 100px;
         height: 55px;
+        margin-top: 4rem;
       }
       h4 {
         font-size: 1em;
       }
       th {
-        font-size: 0;
-
+        font-size: 5px;
       }
       td {
         font-size:calc(3.5px + 1vw);
@@ -53,12 +55,13 @@
       img {
         width: 120px;
         height: 75px;
+        margin-top: 4rem;
       }
       h4 {
         font-size: 1.2em;
       }
       th {
-        font-size: 0;
+        font-size: 2px;
 
       }
       td {
@@ -71,6 +74,7 @@
       img {
         width: 200px;
         height: 125px;
+        margin-top: 1rem;
       }
       h4 {
         font-size: 1.3em;
@@ -88,6 +92,7 @@
       img {
         width: 500px;
         height: 250px;
+        margin-top: 0;
       }
       h4 {
         font-size: 1.5em;
@@ -103,17 +108,18 @@
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
       img {
-        width: 600px;
-        height: 375px;
+        width: 550px;
+        height: 300px;
+        margin-top: 0;
       }
       h4 {
-        font-size: 2em;
+        font-size: 1.5em;
       }
       th {
         font-size:calc(2px + 1vw);
       }
       td {
-        font-size:calc(12px + 1vw);
+        font-size:calc(8px + 1vw);
       }
     }
 }
@@ -138,4 +144,53 @@
   100% {
     opacity: 1;
   }
+}
+
+.toggle {
+  position: fixed;
+  left: 50%;
+  right: 50%;
+
+}
+
+input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #000;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 55px;
 }
