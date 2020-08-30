@@ -108,3 +108,7 @@
 #noInfo {
   font-size: calc(4px + 0.5vw);
 }
+
+.spinner-grow {
+  background: linear-gradient(90deg, rgba(65,112,184,1) 0%, rgba(99,125,70,0.93) 37%, rgba(200,162,124,0.93) 54%, rgba(65,112,184,1) 100%);
+}
