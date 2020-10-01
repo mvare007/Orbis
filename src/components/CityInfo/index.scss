@@ -2,21 +2,25 @@
   display: grid;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background: linear-gradient(180deg, hsl(36, 2%, 53%) 6%, hsl(210, 10%, 23%) 80%);
+  background: linear-gradient(
+    180deg,
+    hsl(36, 2%, 53%) 6%,
+    hsl(210, 10%, 23%) 80%
+  );
   justify-content: center;
   align-content: center;
   text-align: center;
   margin-bottom: 12px;
   border-radius: 13px;
   height: auto;
-  border: 5px groove #7E7E7B;
+  border: 5px groove #7e7e7b;
 }
 
 .card-city h2 {
   font-size: calc(7px + 1vw);
   font-weight: bold;
   color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .card-city .clock {
@@ -35,7 +39,7 @@
   filter: brightness(2);
 }
 
-#weatherDescription{
+#weatherDescription {
   font-size: calc(8px + 0.5vw);
   color: white;
   white-space: nowrap;
@@ -52,8 +56,6 @@
   height: auto;
   margin: 0 auto;
 }
-
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -110,5 +112,11 @@
 }
 
 .spinner-grow {
-  background: linear-gradient(90deg, rgba(65,112,184,1) 0%, rgba(99,125,70,0.93) 37%, rgba(200,162,124,0.93) 54%, rgba(65,112,184,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(65, 112, 184, 1) 0%,
+    rgba(99, 125, 70, 0.93) 37%,
+    rgba(200, 162, 124, 0.93) 54%,
+    rgba(65, 112, 184, 1) 100%
+  );
 }

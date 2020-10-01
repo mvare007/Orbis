@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
-import './index.scss';
+import "./index.scss";
 
-const Country = ({country}) => {
+const Country = ({ country }) => {
+  const {
+    name,
+    flag,
+    topLevelDomain,
+    capital,
+    subregion,
+    population,
+    demonym,
+    area,
+    nativeName,
+    callingCodes,
+    currencies,
+    languages,
+    latlng,
+  } = country;
 
-  const { name, flag, topLevelDomain,
-          capital, subregion,
-          population, demonym, area,
-          nativeName, callingCodes,
-          currencies, languages, latlng } = country
-
-  const [ clicked, handleClick ] = useState(false);
+  const [clicked, handleClick] = useState(false);
 
   const renderTable = () => {
     return (
@@ -36,7 +45,7 @@ const Country = ({country}) => {
             </tr>
             <tr>
               <th scope="row">Language:</th>
-              <td>{Object.values(languages[0])[2] }</td>
+              <td>{Object.values(languages[0])[2]}</td>
             </tr>
             <tr>
               <th scope="row">Currency:</th>
@@ -52,7 +61,7 @@ const Country = ({country}) => {
             </tr>
             <tr>
               <th scope="row">Lat/Long:</th>
-              <td>{Math.round(latlng[0])+ " , " + Math.round(latlng[1])}</td>
+              <td>{Math.round(latlng[0]) + " , " + Math.round(latlng[1])}</td>
             </tr>
             <tr>
               <th scope="row">Calling Code:</th>
@@ -65,20 +74,22 @@ const Country = ({country}) => {
           </tbody>
         </table>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div>
-    <input
-    className="toggle"
-      onClick={() => handleClick(!clicked)}
-      type="checkbox"
-      id="switch" />
+      <input
+        className="toggle"
+        onClick={() => handleClick(!clicked)}
+        type="checkbox"
+        id="switch"
+      />
       <label htmlFor="switch">Toggle</label>
       <div className="country-info fade-in">
-        { clicked ?
-          <div>{renderTable()}</div> :
+        {clicked ? (
+          <div>{renderTable()}</div>
+        ) : (
           <div>
             <TransformWrapper>
               <TransformComponent>
@@ -86,11 +97,11 @@ const Country = ({country}) => {
               </TransformComponent>
             </TransformWrapper>
             <h4>{name}</h4>
-          </div>}
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Country;
-

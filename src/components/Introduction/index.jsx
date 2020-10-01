@@ -1,20 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
 const Earth = () => {
-  return(
+  return (
     <div>
       <div>
         <h1 className="title">Orbis</h1>
         <p className="presentation">Get information on weather and time</p>
       </div>
       <div className="earth">
-        <div>
-        </div>
+        <div></div>
       </div>
     </div>
   );
-}
+};
 
 export default Earth;

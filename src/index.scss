@@ -1,40 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 
 body {
-  background-color: #343A40;
-  font-family: 'Ubuntu', sans-serif;
+  background-color: #343a40;
+  font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    background: linear-gradient(180deg, hsl(36, 2%, 53%) 6%, hsl(210, 10%, 23%) 80%);
-    border: 5px groove #7E7E7B;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    hsl(36, 2%, 53%) 6%,
+    hsl(210, 10%, 23%) 80%
+  );
+  border: 5px groove #7e7e7b;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 0px;
-    -webkit-box-shadow: inset 0 0 32px rgba(0,0,0,0.5);
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.5);
 }
 
-html { font-size: 1rem; }
+html {
+  font-size: 1rem;
+}
 
 @media (min-width: 576px) {
-    html { font-size: 1.25rem; }
+  html {
+    font-size: 1.25rem;
+  }
 }
 @media (min-width: 768px) {
-    html { font-size: 1.5rem; }
+  html {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 992px) {
-    html { font-size: 1.75rem; }
+  html {
+    font-size: 1.75rem;
+  }
 }
 @media (min-width: 1200px) {
-    html { font-size: 2rem; }
+  html {
+    font-size: 2rem;
+  }
 }
-
